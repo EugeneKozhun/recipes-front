@@ -8,6 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from '../environments/environment';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
+import { NgxsSelectSnapshotModule } from '@ngxs-labs/select-snapshot';
 
 registerLocaleData(en);
 
@@ -20,7 +27,16 @@ registerLocaleData(en);
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
+    // TODO: add keys
+    NgxsStoragePluginModule.forRoot(),
+    NgxsDispatchPluginModule.forRoot(),
+    NgxsSelectSnapshotModule.forRoot()
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
