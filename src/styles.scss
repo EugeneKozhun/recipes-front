@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Food';
+  src: local('Food'), url(assets/fonts/food.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Heellaz';
+  src: local('Heellaz'), url(assets/fonts/heellaz.ttf) format('truetype');
+}
+
+$default-margin: 12px;
+$double-margin: $default-margin * 2;
+
+// TODO: Fix it.
+.ant-page-header-heading-title {
+  font-family: 'Heellaz', serif !important;
+  font-size: 32px !important;
+}

@@ -15,6 +15,10 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
 import { NgxsSelectSnapshotModule } from '@ngxs-labs/select-snapshot';
+import { SharedModule } from './shared/shared.module';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
@@ -36,7 +40,11 @@ registerLocaleData(en);
     // TODO: add keys
     NgxsStoragePluginModule.forRoot(),
     NgxsDispatchPluginModule.forRoot(),
-    NgxsSelectSnapshotModule.forRoot()
+    NgxsSelectSnapshotModule.forRoot(),
+    SharedModule,
+    NzLayoutModule,
+    NzButtonModule,
+    NzIconModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
