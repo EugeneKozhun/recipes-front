@@ -8,11 +8,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { RandomFoodDirective } from './directive/random-food.directive';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    RandomFoodDirective
   ],
   exports: [
     HeaderComponent,
